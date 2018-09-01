@@ -30,7 +30,7 @@ The above code results in this:
 
 Notice how the edges between the border sides are bevelled.  
 
-![beveled border edges](img/border-bevel.png)
+![beveled border edges](img/border-bevel.PNG)
 
 
 
