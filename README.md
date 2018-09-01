@@ -27,20 +27,11 @@ Let's look at an example of a DIV with a very large border.  We'll color each of
 ```
 
 The above code results in this:
-<style>
-  .demo {
-    width: 500px;
-    height: 400px;
-    border-width: 50px;
-    border-top-color: green;
-    border-bottom-color: green;
-    border-left-color: blue;
-    border-right-color: blue;
-  }
-</style>
-<div class='demo'></div>
 
 Notice how the edges between the border sides are bevelled.  
+
+![beveled border edges](img/border-bevel.png)
+
 
 
 ## Authors
