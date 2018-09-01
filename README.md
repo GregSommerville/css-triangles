@@ -95,27 +95,47 @@ As you might expect, the resulting triangle is no longer equilateral:
 
 Most practical uses of this will probably be to create equilateral triangles, since they work well as part of a larger arrow shape.  
 
+## Triangles pointing to the corners
+So that's how you can create triangles that point up, down, left and right.  You can also create them that point to the four corners: upper-left, upper-right, lower-left, and lower-right.  To do this, you simply define the top border and either the left or the right border.  One border will be transparent, and one colored.  Here's an image that shows how this works.
+
+![corner triangles](img/corner-triangles.png)
+
 ## Summary
 
-### Creating an upward pointing equilateral triangle:
+### Upward pointing equilateral triangle:
 1.  Define the bottom border with a non-transparent color and a width equal to the height of the triangle.
 2.  Define the left and right borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
-### Creating an downward pointing equilateral triangle:
+### Downward pointing equilateral triangle:
 1.  Define the top border with a non-transparent color and a width equal to the height of the triangle.
 2.  Define the left and right borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
-### Creating an leftward pointing equilateral triangle:
+### Leftward pointing equilateral triangle:
 1.  Define the right border with a non-transparent color and a width equal to the height of the triangle.
 2.  Define the top and bottom borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
-### Creating an upward pointing equilateral triangle:
+### Rightward pointing equilateral triangle:
 1.  Define the left border with a non-transparent color and a width equal to the height of the triangle.
 2.  Define the top and bottom borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
+### Corner triangle Upper-Right
+1.  Define the top border with a non-transparent color and a width equal to the height of one side of the triangle.
+2.  Define the left border as transparent, with a width equal to the height of one side of the triangle.
+
+### Corner triangle Upper-Left
+1.  Define the top border with a non-transparent color and a width equal to the height of one side of the triangle.
+2.  Define the right border as transparent, with a width equal to the height of one side of the triangle.
+
+### Corner triangle Lower-Right
+1.  Define the right border with a non-transparent color and a width equal to the height of one side of the triangle.
+2.  Define the top border as transparent, with a width equal to the height of one side of the triangle.
+
+### Corner triangle Lower-Left
+1.  Define the left border with a non-transparent color and a width equal to the height of one side of the triangle.
+2.  Define the top border as transparent, with a width equal to the height of one side of the triangle.
 
 ## Demo
-There's a demonstration web page located under the src folder.  It looks like this:
+There's a demonstration web page located under the src folder that allows you to play with various widths by simply clicking.  Here's a screenshot, demonstrating how it works:
 
 ![demo screenshot](img/demo.png)
 
