@@ -114,6 +114,11 @@ Most practical uses of this will probably be to create equilateral triangles, si
 2.  Define the top and bottom borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
 
+## Demo
+There's a demonstration web page located under the src folder.  It looks like this:
+
+![demo screenshot](img/demo.png)
+
 ## Authors
 * **Greg Sommerville** - *Initial work* 
  

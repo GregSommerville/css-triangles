@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <style>
+        #aDiv {
+            margin: 20px;
+            width: 0px;
+            height: 0px;
+            border-top: 100px solid red;
+            border-right: 100px solid blue;
+            border-bottom: 100px solid yellow;
+            border-left: 100px solid green;
+        }
+    </style>
+</head>
+<body>
+<div style='max-width: 300px;'>
+Click anywhere in this block.  The point that you click on will define the
+border widths for the top, bottom, left and right borders.
+</div>
+
+<div id="aDiv">
+</div>
+
+<div style='max-width: 300px;'>
+By selectively hiding one of the four borders, and setting two of them to transparent, you can produce a wide variety of shapes.
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		var totalWidth = 200;
+		var totalHeight = 200;
+		var lastX = 100;
+		var lastY = 100;
+
+		$(document.body).mousemove(function (event) {
+			lastX = event.pageX;
+			lastY = event.pageY;
+		});
+
+		$(document.body).click(function () {
+			var leftWidth = lastX; 
+			var topWidth = lastY; 
+			var rightWidth = totalWidth - leftWidth;
+			var bottomWidth = totalHeight - topWidth;
+
+			var aDiv = $("#aDiv");
+			aDiv.css("border-top-width", topWidth + "px");
+			aDiv.css("border-right-width", rightWidth + "px");
+			aDiv.css("border-bottom-width", bottomWidth + "px");
+			aDiv.css("border-left-width", leftWidth + "px");
+		});
+
+	});
+</script>
+
+</body>
+</html>
