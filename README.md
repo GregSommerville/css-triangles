@@ -14,9 +14,10 @@ Let's look at an example of a DIV with a very large border.  We'll color each of
 ```
 <style>
   .demo {
-    width: 500px;
-    height: 400px;
+    width: 300px;
+    height: 200px;
     border-width: 50px;
+    border-style: solid;
     border-top-color: green;
     border-bottom-color: green;
     border-left-color: blue;
@@ -32,6 +33,85 @@ Notice how the edges between the border sides are bevelled.
 
 ![beveled border edges](img/border-bevel.PNG)
 
+Now let's see what it looks like when we only show one side of the border:
+
+```
+<style>
+  .demo2 {
+    width: 300px;
+    height: 200px;
+    border-width: 50px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: green;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+</style>
+<div class='demo2'></div>
+```
+
+![one visible border edge](img/one-border.PNG)
+
+So that's starting to look somewhat like a triangle.  Let's try one more approach:
+
+```
+<style>
+  .demo3 {
+    width: 0px;
+    height: 0px;
+    border-bottom: 100px solid green;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+</style>
+<div class='demo3'></div>
+```
+
+Notice that in this case we've changed our `width` and `height` to be 0, so the entire rendered shape is due to the borders alone.  We've also removed any elements relating to `border-top`.  This leaves the bottom border, which is 100 pixels high and green.  The left and right borders have a width (their combined width is the width of the base of the triangle), but their colors are set to `transparent`.
+
+It's an odd idea, just defining three out of four borders, but it results in this very nice triangle:
+
+![green triangle](img/green-triangle.png)
+
+In this case, our left and right borders had the same width.  They each contributed to the width of the base of the triangle.  Let's try making those widths unequal.
+
+```
+<style>
+  .demo4 {
+    width: 0px;
+    height: 0px;
+    border-bottom: 100px solid green;
+    border-left: 40px solid transparent;
+    border-right: 80px solid transparent;
+  }
+</style>
+<div class='demo4'></div>
+```
+
+As you might expect, the resulting triangle is no longer equilateral:
+
+![scalene green triangle](img/scalene-green-triangle.png)
+
+Most practical uses of this will probably be to create equilateral triangles, since they work well as part of a larger arrow shape.  
+
+## Summary
+
+### Creating an upward pointing equilateral triangle:
+1.  Define the bottom border with a non-transparent color and a width equal to the height of the triangle.
+2.  Define the left and right borders, both transparent, both with a width equal to half the width of the base of the triangle.
+
+### Creating an downward pointing equilateral triangle:
+1.  Define the top border with a non-transparent color and a width equal to the height of the triangle.
+2.  Define the left and right borders, both transparent, both with a width equal to half the width of the base of the triangle.
+
+### Creating an leftward pointing equilateral triangle:
+1.  Define the right border with a non-transparent color and a width equal to the height of the triangle.
+2.  Define the top and bottom borders, both transparent, both with a width equal to half the width of the base of the triangle.
+
+### Creating an upward pointing equilateral triangle:
+1.  Define the left border with a non-transparent color and a width equal to the height of the triangle.
+2.  Define the top and bottom borders, both transparent, both with a width equal to half the width of the base of the triangle.
 
 
 ## Authors
