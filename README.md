@@ -51,7 +51,7 @@ Now let's see what it looks like when we only show one side of the border:
 <div class='demo2'></div>
 ```
 
-![one visible border edge](img/one-border.PNG)
+![one visible border edge](img/one-border.png)
 
 So that's starting to look somewhat like a triangle.  Let's try one more approach:
 
